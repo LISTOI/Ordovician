@@ -5,10 +5,10 @@ module Ordovician_top(
     input  readstart,
     output logic done
 );
-    logic [31:0] Matrix_A        [0:3][0:7][0:23];
-    logic [31:0] Matrix_B        [0:3][0:7][0:23];
-    logic [31:0] Matrix_C_input  [0:3][0:7][0: 7];
-    logic [31:0] Matrix_C_output [0:3][0:7][0: 7];
+    logic [31:0] Matrix_A        [0:3][0: 7][0:23];
+    logic [31:0] Matrix_B        [0:3][0:23][0: 7];
+    logic [31:0] Matrix_C_input  [0:3][0: 7][0: 7];
+    logic [31:0] Matrix_C_output [0:3][0: 7][0: 7];
     logic [5 :0] MUL_valid;
     logic [5 :0] ADD_valid;
     logic [1 :0] Matrix_type; //0 : m8k16n32 1：m16k16n16 2：m32k16n8
