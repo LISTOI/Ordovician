@@ -1,0 +1,8 @@
+0.7
+2020.2
+Mar  6 2025
+19:11:35
+D:/digital design/Ordovician_a7/Ordovician_a7.sim/sim_1/behav/xsim/glbl.v,1734094861,verilog,,,,glbl,,uvm,,,,,,
+D:/digital design/Ordovician_a7/Ordovician_a7.srcs/sim_1/new/systolic_array_tb.sv,1745588599,systemVerilog,,,,SystolicArray_tb,,uvm,,,,,,
+D:/digital design/Ordovician_a7/Ordovician_a7.srcs/sources_1/new/PE.sv,1745238154,systemVerilog,,D:/digital design/Ordovician_a7/Ordovician_a7.srcs/sources_1/new/SystolicArray.sv,,PE,,uvm,,,,,,
+D:/digital design/Ordovician_a7/Ordovician_a7.srcs/sources_1/new/SystolicArray.sv,1745415844,systemVerilog,,D:/digital design/Ordovician_a7/Ordovician_a7.srcs/sim_1/new/systolic_array_tb.sv,,SystolicArray,,uvm,,,,,,

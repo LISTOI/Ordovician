@@ -1,0 +1,21 @@
+Time resolution is 1 ps
+Matrix C Output:
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+$finish called at time : 415 ns : File "D:/digital design/Ordovician_a7/Ordovician_a7.srcs/sim_1/new/systolic_array_tb.sv" Line 90
+Matrix C Output:
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+        32         32         32         32         32         32         32         32 
+$finish called at time : 415 ns : File "D:/digital design/Ordovician_a7/Ordovician_a7.srcs/sim_1/new/systolic_array_tb.sv" Line 90
