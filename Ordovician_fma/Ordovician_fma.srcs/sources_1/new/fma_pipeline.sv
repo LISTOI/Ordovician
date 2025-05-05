@@ -40,10 +40,10 @@ module fma_pipeline #(
             signA_s1 <= 1'b0; expA_s1 <= {(FPexp){1'b0}}; fracA_s1 <= {(FPfrac + 1){1'b0}};
             signB_s1 <= 1'b0; expB_s1 <= {(FPexp){1'b0}}; fracB_s1 <= {(FPfrac + 1){1'b0}};
             signC_s1 <= 1'b0; expC_s1 <= {(FPexp){1'b0}}; fracC_s1 <= {(FPfrac + 1){1'b0}};
-        end 
+        end
         else begin
             valid_s1 <= valid_in;
-            
+
             signA_s1 <= signA_in;
             expA_s1 <= expA_in;
             fracA_s1 <= (expA_in == 0) ? {1'b0, fracA_in} : {1'b1, fracA_in};
@@ -111,20 +111,20 @@ module fma_pipeline #(
     reg [FPfrac : 0]                    fracC_s3;
 
     // Normlized product
-    reg [FPexp + 1 : 0]                 normExp_s2;
-    reg [((FPfrac + 1) << 1) - 1 : 0]   normProd_s2;
-    wire                                leadingBit = prodAB_s2[((FPfrac + 1) << 1) - 1]; 
+    reg [FPexp + 1 : 0]                 normexp_s2;
+    reg [((FPfrac + 1) << 1) - 1 : 0]   normprod_s2;
+    wire                                leadingbit = prodAB_s2[((FPfrac + 1) << 1) - 1]; 
 
     always @(*) begin
         // If the leading bit is set, we have an overflow
-        if(leadingBit == 1'b1) begin
+        if(leadingbit == 1'b1) begin
             // Shift right by 1
-            normExp_s2 = expAB_s2 + 1;
-            normProd_s2 = prodAB_s2 >> 1;
+            normexp_s2 = expAB_s2 + 1;
+            normprod_s2 = prodAB_s2 >> 1;
         end
         else begin
-            normExp_s2 = expAB_s2;
-            normProd_s2 = prodAB_s2;
+            normexp_s2 = expAB_s2;
+            normprod_s2 = prodAB_s2;
         end
     end
 
@@ -141,8 +141,8 @@ module fma_pipeline #(
         else begin
             valid_s3 <= valid_s2;
             signAB_s3 <= signAB_s2;
-            expAB_s3 <= expAB_s2;
-            prodAB_s3 <= prodAB_s2;
+            expAB_s3 <= normexp_s2;
+            prodAB_s3 <= normprod_s2;
         end
     end
 
@@ -185,7 +185,7 @@ module fma_pipeline #(
     wire [FPexp - 1 : 0]    expdiff = bigexp - smallexp;
 
     // Shift the smaller fraction
-    wire [FPfrac : 0]       alignedsmall = (expdiff >= (FPfrac + 1)) ? {(FPfrac){1'b0}} : (smallexp >> expdiff);
+    wire [FPfrac : 0]       alignedsmall = (expdiff >= (FPfrac + 1)) ? {(FPfrac){1'b0}} : (smallfrac >> expdiff);
 
     // Add or subtract
     wire                    signdiff = bigsign ^ smallsign;

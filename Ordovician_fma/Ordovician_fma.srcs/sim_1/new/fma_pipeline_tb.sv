@@ -26,6 +26,7 @@ module fma_pipeline_tb(
         rst_n = 0;
         valid_in = 0;
         # 9.9;
+        rst_n = 1;
         valid_in = 1;
         A_in = 32'h3FC00000;
         B_in = 32'h3FC00000;
