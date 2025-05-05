@@ -24,3 +24,16 @@ source fma_pipeline_tb.tcl
 close_sim
 launch_simulation
 source fma_pipeline_tb.tcl
+relaunch_sim
+synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
