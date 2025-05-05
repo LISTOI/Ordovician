@@ -20,7 +20,7 @@ module Ordovician_top(
 
     //例化读模块，写模块与处理模块
     //读模块是读入外部数据
-    RECEIVE_Matrix read_matrix(
+    READ_Matrix read_matrix(
         .clk(clk),
         .rstn(rstn),
         .readstart(readstart),
@@ -28,8 +28,8 @@ module Ordovician_top(
         .Matrix_A(Matrix_A),
         .Matrix_B(Matrix_B),
         .Matrix_C(Matrix_C_input),
-        //.MUL_valid(MUL_valid),
-        //.ADD_valid(ADD_valid),
+        .MUL_valid(MUL_valid),
+        .ADD_valid(ADD_valid),
         .Matrix_type(Matrix_type)
     );
     CALC_Matrix calc_matrix(
