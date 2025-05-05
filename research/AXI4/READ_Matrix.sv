@@ -16,8 +16,6 @@ module READ_Matrix(
     typedef enum {
         IDLE,
         RECEIVE_TYPE,
-        RECEIVE_MUL,
-        RECEIVE_ADD,
         RECEIVE_DATA,
         DONE
     } state_t;
@@ -31,8 +29,9 @@ module READ_Matrix(
     logic wready, wvalid;
 
     logic [7:0] blk_cnt, row_cnt, col_cnt;
-    logic [1:0] num;
-    logic [7:0] n,m,k;
+    logic [1:0] num; // 0:A 1:B 2:C
+    logic [7:0] m,n,k;
+    logic [7:0] offset;
     
     AXI_slave matrix_read (
         .clk(clk),
@@ -73,10 +72,13 @@ module READ_Matrix(
         next_state = current_state;
         case (current_state)
             IDLE: if (readstart) next_state = RECEIVE_TYPE;
-            RECEIVE_TYPE: if (config_valid) next_state = RECEIVE_MUL;
-            RECEIVE_MUL: if (config_valid) next_state = RECEIVE_ADD;
-            RECEIVE_ADD: if config_valid) next_state = RECEIVE_DATA;
-            RECEIVE_DATA: if (data_valid) next_state = DONE;
+            RECEIVE_TYPE: if (config_valid) next_state = RECEIVE_DATA;
+            RECEIVE_DATA: begin
+                if (num <= 2)
+                    if (data_valid) next_state = RECEIVE_TYPE;
+                else next_state = DONE;
+            end
+            
             DONE: next_state = IDLE;
         endcase
     end
@@ -92,6 +94,9 @@ module READ_Matrix(
             {data_valid, config_valid} <= 0;
             {received_data, received_config} <= 0;
             readdone <= 0;
+            num <= 0;
+            {blk_cnt, row_cnt, col_cnt} <= 0;
+            {n, m, k, offset} <= 0;
         end
         else begin
             current_state <= next_state;
@@ -107,27 +112,87 @@ module READ_Matrix(
                         {data_valid, config_valid} <= 0;
                         {received_data, received_config} <= 0;
                         readdone <= 0;
+                        {blk_cnt, row_cnt, col_cnt} <= 0;
+                        {n, m, k, offset} <= 0;
+                        num <= 0;
                     end
                 end
                 RECEIVE_TYPE: begin
                     if (config_valid) begin
                         Matrix_type <= received_data[1:0];
-                    end
-                end
-                RECEIVE_MUL: begin
-                    if (config_valid) begin
-                        MUL_valid <= received_data[5:0];
-                    end
-                end
-                RECEIVE_ADD: begin
-                    if (config_valid) begin
-                        ADD_valid <= received_data[5:0];
+                        if (received_data[1:0] == 2'b00) begin
+                            m <= 8;
+                            k <= 16;
+                            n <= 32;
+                        end else if (received_data[1:0] == 2'b01) begin
+                            m <= 16;
+                            k <= 16;
+                            n <= 16;
+                        end else if (received_data[1:0] == 2'b10) begin
+                            m <= 32;
+                            k <= 16;
+                            n <= 8;
+                        end
                     end
                 end
                 RECEIVE_DATA: begin
                     if (data_valid) begin
-                        
-                        next_state <= DONE;
+                        if (num == 0) begin // Matrix_A
+                            if (blk_cnt < 4) begin
+                                if (row_cnt < 8) begin
+                                    if (col_cnt < offset + 16) begin
+                                        Matrix_A[blk_cnt][row_cnt][col_cnt + offset] <= received_data;
+                                        col_cnt <= col_cnt + 1;
+                                    end
+                                    else begin
+                                        col_cnt <= offset;
+                                        row_cnt <= row_cnt + 1;
+                                        offset <= offset + 1;
+                                    end
+                                end
+                                else begin
+                                    row_cnt <= 0;
+                                    blk_cnt <= blk_cnt + 1;
+                                end
+                            end
+                        end
+                        else if (num == 1) begin // Matrix_B
+                            if (blk_cnt < 4) begin
+                                if (col_cnt < 8) begin
+                                    if (row_cnt < offset + 16) begin
+                                        Matrix_B[blk_cnt][row_cnt + offset][col_cnt] <= received_data;
+                                        row_cnt <= row_cnt + 1;
+                                    end
+                                    else begin
+                                        row_cnt <= offset;
+                                        col_cnt <= col_cnt + 1;
+                                        offset <= offset + 1;
+                                    end
+                                end
+                                else begin
+                                    col_cnt <= 0;
+                                    blk_cnt <= blk_cnt + 1;
+                                end
+                            end
+                        end
+                        else if (num == 2) begin // Matrix_C
+                            if (blk_cnt < 4) begin
+                                if (row_cnt < 8) begin
+                                    if (col_cnt < 8) begin
+                                        Matrix_C_in[blk_cnt][row_cnt][col_cnt] <= received_data;
+                                        col_cnt <= col_cnt + 1;
+                                    end
+                                    else begin
+                                        col_cnt <= 0;
+                                        row_cnt <= row_cnt + 1;
+                                    end
+                                end
+                                else begin
+                                    row_cnt <= 0;
+                                    blk_cnt <= blk_cnt + 1;
+                                end
+                            end
+                        end
                     end
                 end
                 DONE: begin
