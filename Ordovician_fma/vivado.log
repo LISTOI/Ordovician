@@ -741,3 +741,7 @@ Built simulation snapshot fma_pipeline_tb_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
 Time resolution is 1 ps
 relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 3377.621 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May  5 22:50:32 2025...

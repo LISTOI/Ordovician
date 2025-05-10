@@ -2,3 +2,6 @@ Running: xsim.dir/fma_pipeline_tb_behav/xsimk.exe -simmode gui -wdb fma_pipeline
 Design successfully loaded
 Design Loading Memory Usage: 10480 KB (Peak: 10480 KB)
 Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 11304 KB (Peak: 11304 KB)
+Simulation CPU Usage: 139 ms
