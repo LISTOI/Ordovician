@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Mon May  5 09:25:54 2025
-# Process ID: 25760
+# Start of session at: Sun May 11 16:30:22 2025
+# Process ID: 28884
 # Current directory: D:/Ordovician/Ordovician_fma
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30168 D:\Ordovician\Ordovician_fma\Ordovician_fma.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1812 D:\Ordovician\Ordovician_fma\Ordovician_fma.xpr
 # Log file: D:/Ordovician/Ordovician_fma/vivado.log
 # Journal file: D:/Ordovician/Ordovician_fma\vivado.jou
 # Running On: hswilliam, OS: Windows, CPU Frequency: 2995 MHz, CPU Physical cores: 14, Host memory: 16828 MB
@@ -93,7 +93,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
-open_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 1584.566 ; gain = 249.977
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 1464.988 ; gain = 272.270
 update_compile_order -fileset sources_1
 launch_simulation
 Command: launch_simulation 
@@ -110,72 +110,7 @@ INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordov
 "xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
 ECHO 处于关闭状态。
 ECHO 处于关闭状态。
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-Vivado Simulator v2023.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.fma_pipeline
-Compiling module xil_defaultlib.fma_pipeline_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot fma_pipeline_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-source fma_pipeline_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1643.160 ; gain = 12.012
-set_property -name {xsim.simulate.log_all_signals} -value {true} -objects [get_filesets sim_1]
-set_property -name {xsim.simulate.saif_all_signals} -value {true} -objects [get_filesets sim_1]
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
@@ -190,6 +125,70 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1540.891 ; gain = 41.172
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
@@ -211,7 +210,135 @@ source fma_pipeline_tb.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 2449.141 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1574.656 ; gain = 20.348
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1574.656 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1574.805 ; gain = 0.148
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 launch_simulation
@@ -275,9 +402,11 @@ source fma_pipeline_tb.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2449.141 ; gain = 0.000
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1577.164 ; gain = 2.359
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
@@ -293,284 +422,495 @@ ECHO 处于关闭状态。
 ECHO 处于关闭状态。
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module fma_pipeline
-ERROR: [VRFC 10-2989] 'finalexpAB_s3' is not declared [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:175]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1579.305 ; gain = 2.141
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1579.820 ; gain = 0.516
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1581.602 ; gain = 0.453
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1587.105 ; gain = 5.504
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 2607.102 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+ERROR: [VRFC 10-4982] syntax error near 'sum_s4' [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:233]
+ERROR: [VRFC 10-2989] 'sum_s4' is not declared [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:233]
 ERROR: [VRFC 10-8530] module 'fma_pipeline' is ignored due to previous errors [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:3]
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+ERROR: [VRFC 10-4982] syntax error near 'always' [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:305]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'always' used in incorrect context [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:305]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-99] Step results log file:'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim/xvlog.log'
 ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim/xvlog.log' file for more information.
 ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
 ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-
 synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint 
 Command: synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100ti'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100ti'
 INFO: [Device 21-403] Loading part xc7a100ticsg324-1L
-ERROR: [Synth 8-36] 'finalexpAB_s3' is not declared [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:175]
-INFO: [Synth 8-10285] module 'fma_pipeline' is ignored due to previous errors [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:258]
+ERROR: [Synth 8-2716] syntax error near 'sum_s4' [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:233]
+ERROR: [Synth 8-36] 'sum_s4' is not declared [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:233]
+INFO: [Synth 8-10285] module 'fma_pipeline' is ignored due to previous errors [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:291]
+ERROR: [Synth 8-2716] syntax error near 'always' [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:305]
+ERROR: [Synth 8-10307] SystemVerilog keyword 'always' used in incorrect context [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:305]
 INFO: [Synth 8-9084] Verilog file 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv' ignored due to errors
 Failed to read verilog 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv'
 INFO: [Common 17-83] Releasing license: Synthesis
-5 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+5 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2682.398 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2607.102 ; gain = 0.000
 ERROR: [Common 17-39] 'synth_design' failed due to earlier errors.
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-Vivado Simulator v2023.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.fma_pipeline
-Compiling module xil_defaultlib.fma_pipeline_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot fma_pipeline_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2682.398 ; gain = 0.000
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-Vivado Simulator v2023.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.fma_pipeline
-Compiling module xil_defaultlib.fma_pipeline_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot fma_pipeline_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2682.398 ; gain = 0.000
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-Vivado Simulator v2023.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-Time resolution is 1 ps
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-Vivado Simulator v2023.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.fma_pipeline
-Compiling module xil_defaultlib.fma_pipeline_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot fma_pipeline_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2682.398 ; gain = 0.000
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-Vivado Simulator v2023.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.fma_pipeline
-Compiling module xil_defaultlib.fma_pipeline_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot fma_pipeline_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2682.398 ; gain = 0.000
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
-ECHO 处于关闭状态。
-ECHO 处于关闭状态。
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fma_pipeline
-ERROR: [VRFC 10-1280] procedural assignment to a non-register expAB_final is not permitted, left-hand side should be reg/integer/time/genvar [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:170]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register expAB_final is not permitted, left-hand side should be reg/integer/time/genvar [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:172]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register expAB_final is not permitted, left-hand side should be reg/integer/time/genvar [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:173]
-ERROR: [VRFC 10-8530] module 'fma_pipeline' is ignored due to previous errors [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:3]
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-99] Step results log file:'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-
 synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint 
 Command: synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100ti'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100ti'
-ERROR: [Synth 8-2577] procedural assignment to a non-register expAB_final is not permitted, left-hand side should be reg/integer/time/genvar [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:170]
-ERROR: [Synth 8-2577] procedural assignment to a non-register expAB_final is not permitted, left-hand side should be reg/integer/time/genvar [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:172]
-ERROR: [Synth 8-2577] procedural assignment to a non-register expAB_final is not permitted, left-hand side should be reg/integer/time/genvar [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:173]
-INFO: [Synth 8-10285] module 'fma_pipeline' is ignored due to previous errors [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:268]
+ERROR: [Synth 8-36] 'FPexp' is not declared [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:302]
+ERROR: [Synth 8-2716] syntax error near 'always' [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:305]
+ERROR: [Synth 8-10307] SystemVerilog keyword 'always' used in incorrect context [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:305]
 INFO: [Synth 8-9084] Verilog file 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv' ignored due to errors
 Failed to read verilog 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv'
 INFO: [Common 17-83] Releasing license: Synthesis
-4 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+3 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
 synth_design completed successfully
 ERROR: [Common 17-39] 'synth_design' failed due to earlier errors.
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint 
+Command: synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100ti'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2607.102 ; gain = 0.000
+---------------------------------------------------------------------------------
+Clean up Linter database...
+INFO: [Synth 8-6157] synthesizing module 'fma_pipeline' [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:3]
+WARNING: [Synth 8-3936] Found unconnected internal register 'frac_norm_reg' and it is trimmed from '48' to '46' bits. [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:248]
+INFO: [Synth 8-6155] done synthesizing module 'fma_pipeline' (1#1) [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2607.102 ; gain = 0.000
+---------------------------------------------------------------------------------
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun May 11 20:32:06 2025
+| Host         : hswilliam running 64-bit major release  (build 9200)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+
+1. Summary
+----------
+
++----------+--------------+----------+
+| Rule ID  | # Violations | # Waived |
++----------+--------------+----------+
+| ASSIGN-6 | 1            | 0        |
+| INFER-1  | 3            | 0        |
++----------+--------------+----------+
+
+
+WARNING: [Synth 37-86] [ASSIGN-6]All bits in array 'frac_norm' are not read. First unread bit index is 0. 
+RTL Name 'frac_norm', Hierarchy 'fma_pipeline', File 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv', Line 243.
+WARNING: [Synth 37-88] [INFER-1]Inferred latch found for exp_big_reg. 
+RTL Name 'exp_big_reg', Hierarchy 'fma_pipeline', File 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv', Line 173.
+WARNING: [Synth 37-88] [INFER-1]Inferred latch found for frac_big_reg. 
+RTL Name 'frac_big_reg', Hierarchy 'fma_pipeline', File 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv', Line 174.
+WARNING: [Synth 37-88] [INFER-1]Inferred latch found for sign_big_reg. 
+RTL Name 'sign_big_reg', Hierarchy 'fma_pipeline', File 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv', Line 172.
+INFO: [Synth 37-85] Total of 4 linter message(s) generated.
+INFO: [Synth 37-45] Linter Run Finished!
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2607.102 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2607.102 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Synthesis
+8 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2607.102 ; gain = 0.000
+synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint 
+Command: synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100ti'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2607.102 ; gain = 0.000
+---------------------------------------------------------------------------------
+Clean up Linter database...
+INFO: [Synth 8-6157] synthesizing module 'fma_pipeline' [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:3]
+WARNING: [Synth 8-3936] Found unconnected internal register 'frac_norm_reg' and it is trimmed from '48' to '46' bits. [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:248]
+INFO: [Synth 8-6155] done synthesizing module 'fma_pipeline' (1#1) [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2607.102 ; gain = 0.000
+---------------------------------------------------------------------------------
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun May 11 20:33:33 2025
+| Host         : hswilliam running 64-bit major release  (build 9200)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+
+1. Summary
+----------
+
++----------+--------------+----------+
+| Rule ID  | # Violations | # Waived |
++----------+--------------+----------+
+| ASSIGN-6 | 1            | 0        |
++----------+--------------+----------+
+
+
+WARNING: [Synth 37-86] [ASSIGN-6]All bits in array 'frac_norm' are not read. First unread bit index is 0. 
+RTL Name 'frac_norm', Hierarchy 'fma_pipeline', File 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv', Line 243.
+INFO: [Synth 37-85] Total of 1 linter message(s) generated.
+INFO: [Synth 37-45] Linter Run Finished!
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2607.102 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2618.242 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Synthesis
+8 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2618.242 ; gain = 11.141
+launch_simulation
+Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
@@ -580,12 +920,71 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/
 INFO: [VRFC 10-311] analyzing module fma_pipeline
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 2618.242 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
@@ -607,14 +1006,39 @@ Compiling module xil_defaultlib.fma_pipeline_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot fma_pipeline_tb_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 2682.398 ; gain = 0.000
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2618.242 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
@@ -624,12 +1048,71 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/
 INFO: [VRFC 10-311] analyzing module fma_pipeline
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
@@ -651,14 +1134,39 @@ Compiling module xil_defaultlib.fma_pipeline_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot fma_pipeline_tb_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2682.398 ; gain = 0.000
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
@@ -668,12 +1176,135 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/
 INFO: [VRFC 10-311] analyzing module fma_pipeline
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
@@ -695,14 +1326,39 @@ Compiling module xil_defaultlib.fma_pipeline_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot fma_pipeline_tb_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2682.398 ; gain = 0.000
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
@@ -712,12 +1368,7 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/
 INFO: [VRFC 10-311] analyzing module fma_pipeline
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
@@ -739,9 +1390,1393 @@ Compiling module xil_defaultlib.fma_pipeline_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot fma_pipeline_tb_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 3377.621 ; gain = 0.000
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3164.449 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3613.070 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3613.070 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 3613.844 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+ERROR: [VRFC 10-4982] syntax error near 'sign_small' [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:191]
+ERROR: [VRFC 10-8530] module 'fma_pipeline' is ignored due to previous errors [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:3]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3613.844 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3613.844 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 3613.844 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3613.844 ; gain = 0.000
+synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint 
+Command: synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100ti'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3613.844 ; gain = 0.000
+---------------------------------------------------------------------------------
+Clean up Linter database...
+INFO: [Synth 8-6157] synthesizing module 'fma_pipeline' [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fma_pipeline' (1#1) [D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3613.844 ; gain = 0.000
+---------------------------------------------------------------------------------
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun May 11 23:26:44 2025
+| Host         : hswilliam running 64-bit major release  (build 9200)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+
+1. Summary
+----------
+
++----------+--------------+----------+
+| Rule ID  | # Violations | # Waived |
++----------+--------------+----------+
+| ASSIGN-6 | 1            | 0        |
+| ASSIGN-7 | 3            | 0        |
++----------+--------------+----------+
+
+
+WARNING: [Synth 37-86] [ASSIGN-6]All bits in array 'frac_s4' are not read. First unread bit index is 0. 
+RTL Name 'frac_s4', Hierarchy 'fma_pipeline', File 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv', Line 164.
+WARNING: [Synth 37-90] [ASSIGN-7]Multiple assignments detected on array expC_s3, first multi-driven bit index is 0.
+RTL Name 'expC_s3', Hierarchy 'fma_pipeline', File 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv', Line 110.
+WARNING: [Synth 37-90] [ASSIGN-7]Multiple assignments detected on array fracC_s3, first multi-driven bit index is 0.
+RTL Name 'fracC_s3', Hierarchy 'fma_pipeline', File 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv', Line 111.
+WARNING: [Synth 37-96] [ASSIGN-7]Multiple assignments detected on signal 'signC_s3'.
+RTL Name 'signC_s3', Hierarchy 'fma_pipeline', File 'D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv', Line 109.
+INFO: [Synth 37-85] Total of 4 linter message(s) generated.
+INFO: [Synth 37-45] Linter Run Finished!
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 3613.844 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3613.844 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Synthesis
+8 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 3613.844 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fma_pipeline_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fma_pipeline_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj fma_pipeline_tb_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Ordovician/Ordovician_fma/Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fma_pipeline_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fma_pipeline_tb_behav xil_defaultlib.fma_pipeline_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fma_pipeline
+Compiling module xil_defaultlib.fma_pipeline_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fma_pipeline_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Ordovician/Ordovician_fma/Ordovician_fma.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fma_pipeline_tb_behav -key {Behavioral:sim_1:Functional:fma_pipeline_tb} -tclbatch {fma_pipeline_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fma_pipeline_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fma_pipeline_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3613.844 ; gain = 0.000
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Mon May  5 22:50:32 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun May 11 23:31:53 2025...

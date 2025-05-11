@@ -15,7 +15,7 @@ module fma_pipeline #(
     output  wire    [FP - 1 : 0]    F_out
     );
 
-    // Stage 1: Decode
+    // Stage 1: Unpack
     reg valid_s1;
     
     // Pipeline registers for stage 1
@@ -87,10 +87,10 @@ module fma_pipeline #(
             signAB_s2 <= signA_s1 ^ signB_s1;
 
             // Add exponents
-            expAB_s2 <= (expA_s1 + expB_s1) - ((1 << (FPexp - 1)) - 1);
+            expAB_s2 <= ((&expA_s1) | (&expB_s1)) ? ({(FPexp){1'b1}}) : ({{2'b0}, expA_s1} + {{2'b0}, expB_s1}) - ((1 << (FPexp - 1)) - 1);
 
             // Multiply frac
-            prodAB_s2 <= fracA_s1 * fracB_s1;
+            prodAB_s2 <= {{(FPfrac + 1){1'b0}}, fracA_s1} * {{(FPfrac + 1){1'b0}}, fracB_s1};
 
             // Pass along C
             signC_s2 <= signC_s1;
@@ -107,24 +107,29 @@ module fma_pipeline #(
     reg [FPexp + 1 : 0]                 expAB_s3;
     reg [((FPfrac + 1) << 1) - 1 : 0]   prodAB_s3;
     reg                                 signC_s3;
-    reg [FPexp - 1 : 0]                 expC_s3;
-    reg [FPfrac : 0]                    fracC_s3;
+    reg [FPexp + 1 : 0]                 expC_s3;
+    reg [((FPfrac + 1) << 1) - 1 : 0]   fracC_s3;
 
     // Normlized product
     reg [FPexp + 1 : 0]                 expAB_norm;
     reg [((FPfrac + 1) << 1) - 1 : 0]   prodAB_norm;
-    wire                                leadingbit = prodAB_s2[((FPfrac + 1) << 1) - 1]; 
 
     always @(*) begin
         // If the leading bit is set, we have an overflow
-        if(leadingbit == 1'b1) begin
-            // Shift right by 1
-            expAB_norm = expAB_s2 + 1;
-            prodAB_norm = prodAB_s2 >> 1;
+        if(prodAB_s2 == 0) begin
+            expAB_norm = {(FPexp + 2){1'b0}};
+            prodAB_norm = {((FPfrac + 1) << 1){1'b0}};
         end
         else begin
-            expAB_norm = expAB_s2;
-            prodAB_norm = prodAB_s2;
+            if(prodAB_s2[((FPfrac + 1) << 1) - 1] == 1'b1) begin
+                // Shift right by 1
+                expAB_norm = expAB_s2 + 1;
+                prodAB_norm = prodAB_s2 >> 1;
+            end
+            else begin
+                expAB_norm = expAB_s2;
+                prodAB_norm = prodAB_s2;
+            end
         end
     end
 
@@ -133,12 +138,12 @@ module fma_pipeline #(
             valid_s3 <= 1'b0;
 
             signAB_s3 <= 1'b0;
-            expAB_s3 <= {(FPexp << 1){1'b0}};
+            expAB_s3 <= {(FPexp + 2){1'b0}};
             prodAB_s3 <= {((FPfrac + 1) << 1){1'b0}};
 
             signC_s3 <= 1'b0;
-            expC_s3 <= {(FPexp){1'b0}};
-            fracC_s3 <= {(FPfrac + 1){1'b0}};
+            expC_s3 <= {(FPexp + 2){1'b0}};
+            fracC_s3 <= {((FPfrac + 1) << 1){1'b0}};
         end
         else begin
             valid_s3 <= valid_s2;
@@ -147,45 +152,27 @@ module fma_pipeline #(
             signAB_s3 <= signAB_s2;
             expAB_s3 <= expAB_norm;
             prodAB_s3 <= prodAB_norm;
-
-            // Pass along C
-            signC_s3 <= signC_s2;
-            expC_s3 <= expC_s2;
-            fracC_s3 <= fracC_s2;
         end
     end
 
-    // Stage 4: Add product and C
+    // Stage 4: Add product and C & Normlize sum
     reg valid_s4;
 
-    // Pipeline registers for stage 3
-    reg                 sign_s4;
-    reg [FP - 1: 0]     sum_s4;
-
-    // Round product
-    reg [FPexp - 1 : 0]    expAB_final;
-    reg [FPfrac : 0]       prodAB_final;
-
-    always @(*) begin
-        if(expAB_s3[FPexp + 1]) expAB_final = {(FPexp){1'b0}};
-        else begin
-            if(expAB_s3 >= (1 << FPexp)) expAB_final = {(FPexp){1'b1}};
-            else expAB_final = expAB_s3[FPexp - 1 : 0];
-        end
-
-        prodAB_final = prodAB_s3[(FPfrac << 1) : FPfrac];
-    end
+    // Pipeline registers for stage 4
+    reg                                 sign_s4;
+    reg [FPexp + 1 : 0]                 exp_s4;
+    reg [((FPfrac + 1) << 1) - 1 : 0]   frac_s4;
 
     // Compare expAB_s3 and expC_s3 to align them
-    reg                     sign_big, sign_small;
-    reg [FPexp - 1 : 0]     exp_big, exp_small;
-    reg [FPfrac : 0]        frac_big, frac_small;
+    reg                                 sign_big, sign_small;
+    reg [FPexp + 1 : 0]                 exp_big, exp_small;
+    reg [((FPfrac + 1) << 1) - 1 : 0]   frac_big, frac_small;
     
     always @(*) begin
-        if(expAB_final > expC_s3) begin
+        if($signed(expAB_s3) > $signed(expC_s3)) begin
             sign_big = signAB_s3;
-            exp_big = expAB_final;
-            frac_big = prodAB_final;
+            exp_big = expAB_s3;
+            frac_big = prodAB_s3;
 
             sign_small = signC_s3;
             exp_small = expC_s3;
@@ -197,37 +184,52 @@ module fma_pipeline #(
             frac_big = fracC_s3;
 
             sign_small = signAB_s3;
-            exp_small = expAB_final;
-            frac_small = prodAB_final;
+            exp_small = expAB_s3;
+            frac_small = prodAB_s3;
         end
     end
 
     // Exponent difference
-    wire [FPexp - 1 : 0]    exp_diff = frac_big - frac_small;
+    wire [FPexp + 1 : 0]    exp_diff = exp_big - exp_small;
 
     // Align the smaller fraction
-    wire [FPfrac : 0]       frac_aligned = (exp_diff >= (FPfrac + 1)) ? {(FPfrac + 1){1'b0}} : (frac_small >> exp_diff);
+    wire [((FPfrac + 1) << 1) - 1 : 0]  frac_aligned = frac_small >> exp_diff;
 
     // Add or subtract
-    wire                    sign_sum = sign_big ^ sign_small;
-    reg [FPfrac + 1 : 0]    frac_sum;
+    reg                                 sign_sum;
+    reg [((FPfrac + 1) << 1) - 1 : 0]   frac_sum;
 
     always @(*) begin
         // Subtract
-        if(sign_sum) begin
+        if(sign_big ^ sign_small) begin
             if(frac_big >= frac_aligned) begin
-                sign_s4 = sign_big;
+                sign_sum = sign_big;
                 frac_sum = frac_big - frac_aligned;
             end
             else begin
-                sign_s4 = ~sign_big;
+                sign_sum = ~sign_big;
                 frac_sum = frac_aligned - frac_big;
             end
         end
         // Add
         else begin
-            sign_s4 = sign_big;
+            sign_sum = sign_big;
             frac_sum = frac_big + frac_aligned;
+        end
+    end
+
+    // Normlized sum
+    reg [FPexp + 1 : 0]                 exp_norm;
+    reg [((FPfrac + 1) << 1) - 1 : 0]   frac_norm;
+
+    always @(*) begin
+        if(frac_sum[((FPfrac + 1) << 1) - 1] == 1'b1) begin
+            exp_norm = exp_big + 1;
+            frac_norm = frac_sum >> 1;
+        end
+        else begin
+            exp_norm = exp_big;
+            frac_norm = frac_sum;
         end
     end
 
@@ -235,19 +237,53 @@ module fma_pipeline #(
         if(!rst_n) begin
             valid_s4 <= 1'b0;
 
-            sum_s4 <= {(FP){1'b0}};
+            sign_s4 <= 1'b0;
+            exp_s4 <= {(FPexp + 2){1'b0}};
+            frac_s4 <= {((FPfrac + 1) << 1){1'b0}};
         end
         else begin
             valid_s4 <= valid_s3;
 
-            // Pack sign, exponent, fraction into float
-            sum_s4 <= {sign_s4, exp_big, frac_sum[FPfrac - 1 : 0]};
+            sign_s4 <= sign_sum;
+            exp_s4 <= exp_norm;
+            frac_s4 <= frac_norm;
+
+            // Forwarding path of C
+            if(valid_s3) begin
+                signC_s3 <= sign_sum;
+                expC_s3 <= exp_norm;
+                fracC_s3 <= frac_norm;
+            end
+            else begin
+                signC_s3 <= signC_s2;
+                expC_s3 <= {{2'b0}, expC_s2};
+                fracC_s3 <= {{1'b0}, fracC_s2, {(FPfrac){1'b0}}};
+            end
         end
     end
 
-    // Stage 5: Normalize & Round
+    // Stage 5: Round & Pack
     reg                 valid_s5;
     reg [FP - 1 : 0]    out_s5;
+
+    // Round sum
+    reg [FPexp - 1 : 0]     exp_final;
+    reg [FPfrac - 1 : 0]    frac_final;
+
+    always @(*) begin
+        if(exp_s4[FPexp + 1]) begin
+            exp_final = {(FPexp){1'b0}};
+            frac_final = {(FPfrac){1'b0}};
+        end
+        else if(exp_s4[FPexp] | (&exp_s4[FPexp - 1 : 0])) begin
+            exp_final = {(FPexp){1'b1}};
+            frac_final = {(FPfrac){1'b0}};
+        end
+        else begin
+            exp_final = exp_s4[FPexp - 1 : 0];
+            frac_final = frac_s4[(FPfrac << 1) - 1 : FPfrac];
+        end
+    end
 
     always @(posedge clk) begin
         if(!rst_n) begin
@@ -258,7 +294,7 @@ module fma_pipeline #(
         else begin
             valid_s5 <= valid_s4;
 
-            out_s5 <= sum_s4;
+            out_s5 <= {sign_s4, exp_final, frac_final};
         end
     end
 

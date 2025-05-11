@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon May  5 09:25:54 2025
+# Process ID: 25760
+# Current directory: D:/Ordovician/Ordovician_fma
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30168 D:\Ordovician\Ordovician_fma\Ordovician_fma.xpr
+# Log file: D:/Ordovician/Ordovician_fma/vivado.log
+# Journal file: D:/Ordovician/Ordovician_fma\vivado.jou
+# Running On: hswilliam, OS: Windows, CPU Frequency: 2995 MHz, CPU Physical cores: 14, Host memory: 16828 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/Ordovician/Ordovician_fma/Ordovician_fma.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source fma_pipeline_tb.tcl
+set_property -name {xsim.simulate.log_all_signals} -value {true} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.saif_all_signals} -value {true} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source fma_pipeline_tb.tcl
+close_sim
+launch_simulation
+source fma_pipeline_tb.tcl
+relaunch_sim
+synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+synth_design -top fma_pipeline -part xc7a100ticsg324-1L -lint 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
