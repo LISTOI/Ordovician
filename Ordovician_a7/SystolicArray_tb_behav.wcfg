@@ -3,85 +3,144 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="SystolicArray_tb_behav.wdb" id="1">
+      <db_ref path="top_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="SystolicArray_tb" />
             <top_module name="glbl" />
+            <top_module name="top_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="54.874 ns"></ZoomStartTime>
-      <ZoomEndTime time="424.875 ns"></ZoomEndTime>
-      <Cursor1Time time="363.744 ns"></Cursor1Time>
+      <ZoomStartTime time="9,359.667 ns"></ZoomStartTime>
+      <ZoomEndTime time="9,573.668 ns"></ZoomEndTime>
+      <Cursor1Time time="9,490.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="340"></NameColumnWidth>
-      <ValueColumnWidth column_width="155"></ValueColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="16" />
-   <wvobject fp_name="/SystolicArray_tb/clk" type="logic">
+   <WVObjectSize size="22" />
+   <wvobject fp_name="/top_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/rstn" type="logic">
+   <wvobject fp_name="/top_tb/rstn" type="logic">
       <obj_property name="ElementShortName">rstn</obj_property>
       <obj_property name="ObjectShortName">rstn</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/calcstart" type="logic">
-      <obj_property name="ElementShortName">calcstart</obj_property>
-      <obj_property name="ObjectShortName">calcstart</obj_property>
+   <wvobject fp_name="/top_tb/readstart" type="logic">
+      <obj_property name="ElementShortName">readstart</obj_property>
+      <obj_property name="ObjectShortName">readstart</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/calcdone" type="logic">
-      <obj_property name="ElementShortName">calcdone</obj_property>
-      <obj_property name="ObjectShortName">calcdone</obj_property>
+   <wvobject fp_name="/top_tb/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/Matrix_A" type="array">
-      <obj_property name="ElementShortName">Matrix_A[0:7][0:23][31:0]</obj_property>
-      <obj_property name="ObjectShortName">Matrix_A[0:7][0:23][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/Matrix_B" type="array">
-      <obj_property name="ElementShortName">Matrix_B[0:23][0:7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">Matrix_B[0:23][0:7][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/Matrix_C_input" type="array">
-      <obj_property name="ElementShortName">Matrix_C_input[0:7][0:7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">Matrix_C_input[0:7][0:7][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/Matrix_C_output" type="array">
-      <obj_property name="ElementShortName">Matrix_C_output[0:7][0:7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">Matrix_C_output[0:7][0:7][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/dut/state" type="array">
+   <wvobject fp_name="/top_tb/top_tb/state" type="array">
       <obj_property name="ElementShortName">state[1:0]</obj_property>
       <obj_property name="ObjectShortName">state[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/dut/A_wire" type="array">
-      <obj_property name="ElementShortName">A_wire[0:7][0:8][31:0]</obj_property>
-      <obj_property name="ObjectShortName">A_wire[0:7][0:8][31:0]</obj_property>
+   <wvobject fp_name="/top_tb/top_tb/Matrix_A" type="array">
+      <obj_property name="ElementShortName">Matrix_A[0:3][0:7][0:22][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Matrix_A[0:3][0:7][0:22][31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/dut/B_wire" type="array">
-      <obj_property name="ElementShortName">B_wire[0:8][0:7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">B_wire[0:8][0:7][31:0]</obj_property>
+   <wvobject fp_name="/top_tb/top_tb/Matrix_B" type="array">
+      <obj_property name="ElementShortName">Matrix_B[0:3][0:22][0:7][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Matrix_B[0:3][0:22][0:7][31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/dut/\row_loop[0].col_loop[0].pe_inst /A_in" type="array">
+   <wvobject fp_name="/top_tb/top_tb/Matrix_C_input" type="array">
+      <obj_property name="ElementShortName">Matrix_C_input[0:3][0:7][0:7][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Matrix_C_input[0:3][0:7][0:7][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /A_in" type="array">
       <obj_property name="ElementShortName">A_in[31:0]</obj_property>
       <obj_property name="ObjectShortName">A_in[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/dut/\row_loop[0].col_loop[0].pe_inst /B_in" type="array">
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /B_in" type="array">
       <obj_property name="ElementShortName">B_in[31:0]</obj_property>
       <obj_property name="ObjectShortName">B_in[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/dut/\row_loop[0].col_loop[0].pe_inst /C_reg" type="array">
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /C_load" type="logic">
+      <obj_property name="ElementShortName">C_load</obj_property>
+      <obj_property name="ObjectShortName">C_load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /C_init" type="array">
+      <obj_property name="ElementShortName">C_init[31:0]</obj_property>
+      <obj_property name="ObjectShortName">C_init[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /A_reg" type="array">
+      <obj_property name="ElementShortName">A_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">A_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /A_alu" type="array">
+      <obj_property name="ElementShortName">A_alu[7:0]</obj_property>
+      <obj_property name="ObjectShortName">A_alu[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /B_reg" type="array">
+      <obj_property name="ElementShortName">B_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /B_alu" type="array">
+      <obj_property name="ElementShortName">B_alu[7:0]</obj_property>
+      <obj_property name="ObjectShortName">B_alu[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /C_reg" type="array">
       <obj_property name="ElementShortName">C_reg[31:0]</obj_property>
       <obj_property name="ObjectShortName">C_reg[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/dut/\row_loop[0].col_loop[0].pe_inst /C_out" type="array">
-      <obj_property name="ElementShortName">C_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">C_out[31:0]</obj_property>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /C_base" type="array">
+      <obj_property name="ElementShortName">C_base[15:0]</obj_property>
+      <obj_property name="ObjectShortName">C_base[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SystolicArray_tb/dut/C_out_wire" type="array">
-      <obj_property name="ElementShortName">C_out_wire[0:7][0:7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">C_out_wire[0:7][0:7][31:0]</obj_property>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /C_next" type="array">
+      <obj_property name="ElementShortName">C_next[15:0]</obj_property>
+      <obj_property name="ObjectShortName">C_next[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/calc_matrix/systolicarray1/\row_loop[0].col_loop[0].pe_inst /C_alu" type="array">
+      <obj_property name="ElementShortName">C_alu[15:0]</obj_property>
+      <obj_property name="ObjectShortName">C_alu[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_tb/Matrix_C_output" type="array">
+      <obj_property name="ElementShortName">Matrix_C_output[0:3][0:7][0:7][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Matrix_C_output[0:3][0:7][0:7][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/top_tb/top_tb/Matrix_C_output[0]" type="array">
+         <obj_property name="ElementShortName">[0][0:7][0:7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][0:7][0:7][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_tb/Matrix_C_output[1]" type="array">
+         <obj_property name="ElementShortName">[1][0:7][0:7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][0:7][0:7][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_tb/Matrix_C_output[2]" type="array">
+         <obj_property name="ElementShortName">[2][0:7][0:7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][0:7][0:7][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_tb/Matrix_C_output[3]" type="array">
+         <obj_property name="ElementShortName">[3][0:7][0:7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][0:7][0:7][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_tb/Matrix_C_output[0]" type="array">
+         <obj_property name="ElementShortName">[0][0:7][0:7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][0:7][0:7][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_tb/Matrix_C_output[1]" type="array">
+         <obj_property name="ElementShortName">[1][0:7][0:7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][0:7][0:7][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_tb/Matrix_C_output[2]" type="array">
+         <obj_property name="ElementShortName">[2][0:7][0:7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][0:7][0:7][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_tb/Matrix_C_output[3]" type="array">
+         <obj_property name="ElementShortName">[3][0:7][0:7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][0:7][0:7][31:0]</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

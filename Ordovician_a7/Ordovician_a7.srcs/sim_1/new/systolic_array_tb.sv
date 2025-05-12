@@ -3,7 +3,7 @@
 module SystolicArray_tb;
     parameter ROW = 8;
     parameter COL = 8;
-    parameter K   = 24;
+    parameter K   = 23;
     
     logic clk;
     logic rstn;
@@ -15,8 +15,8 @@ module SystolicArray_tb;
     logic [31:0] Matrix_C_input [0:ROW-1][0:COL-1];
     logic [31:0] Matrix_C_output[0:ROW-1][0:COL-1];
 
-    logic [5:0] MUL_valid;
-    logic [5:0] ADD_valid;
+    logic [1:0] MUL_valid;
+    logic [1:0] ADD_valid;
 
     SystolicArray dut (
         .clk(clk),
@@ -64,8 +64,8 @@ module SystolicArray_tb;
         clk = 0;
         rstn = 0;
         calcstart = 0;
-        MUL_valid = 6'd0;
-        ADD_valid = 6'd0;
+        MUL_valid = 2'd1;
+        ADD_valid = 2'd1;
         init_matrices();
 
         #20;

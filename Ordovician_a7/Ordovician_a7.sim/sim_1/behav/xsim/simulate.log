@@ -1,21 +1,21 @@
 Time resolution is 1 ps
-Matrix C Output:
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-$finish called at time : 415 ns : File "D:/digital design/Ordovician_a7/Ordovician_a7.srcs/sim_1/new/systolic_array_tb.sv" Line 90
-Matrix C Output:
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-        32         32         32         32         32         32         32         32 
-$finish called at time : 415 ns : File "D:/digital design/Ordovician_a7/Ordovician_a7.srcs/sim_1/new/systolic_array_tb.sv" Line 90
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module top_tb.top_tb.read_matrix.u_bram_A.inst.axi_mem_module.blk_mem_gen_v8_4_10_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module top_tb.top_tb.read_matrix.u_bram_B.inst.axi_mem_module.blk_mem_gen_v8_4_10_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module top_tb.top_tb.read_matrix.u_bram_A.inst.axi_mem_module.blk_mem_gen_v8_4_10_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module top_tb.top_tb.read_matrix.u_bram_B.inst.axi_mem_module.blk_mem_gen_v8_4_10_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+$finish called at time : 11770 ns : File "D:/digital design/Ordovician/Ordovician_a7/Ordovician_a7.srcs/sim_1/new/top_tb.sv" Line 46
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module top_tb.top_tb.read_matrix.u_bram_A.inst.axi_mem_module.blk_mem_gen_v8_4_10_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module top_tb.top_tb.read_matrix.u_bram_B.inst.axi_mem_module.blk_mem_gen_v8_4_10_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+$finish called at time : 11770 ns : File "D:/digital design/Ordovician/Ordovician_a7/Ordovician_a7.srcs/sim_1/new/top_tb.sv" Line 46

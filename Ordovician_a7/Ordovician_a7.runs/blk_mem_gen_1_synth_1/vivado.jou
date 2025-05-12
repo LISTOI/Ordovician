@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2.2 (64-bit)
+# SW Build 6060944 on Thu Mar 06 19:10:01 MST 2025
+# IP Build 6050500 on Thu Mar  6 23:33:39 MST 2025
+# SharedData Build 6060542 on Thu Mar 06 10:31:07 MST 2025
+# Start of session at: Sun May 11 20:52:33 2025
+# Process ID         : 24564
+# Current directory  : D:/digital design/Ordovician/Ordovician_a7/Ordovician_a7.runs/blk_mem_gen_1_synth_1
+# Command line       : vivado.exe -log blk_mem_gen_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_mem_gen_1.tcl
+# Log file           : D:/digital design/Ordovician/Ordovician_a7/Ordovician_a7.runs/blk_mem_gen_1_synth_1/blk_mem_gen_1.vds
+# Journal file       : D:/digital design/Ordovician/Ordovician_a7/Ordovician_a7.runs/blk_mem_gen_1_synth_1\vivado.jou
+# Running On         : TR-PC
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 8463 MB
+# Swap memory        : 13435 MB
+# Total Virtual      : 21898 MB
+# Available Virtual  : 2134 MB
+#-----------------------------------------------------------
+source blk_mem_gen_1.tcl -notrace
