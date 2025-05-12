@@ -17,6 +17,24 @@ module PE #(parameter WIDTH = 32)(
     logic [WIDTH-1:0] A_reg, B_reg, C_reg;
     //浮点运算单元
     logic [WIDTH-1:0] C_fpu;
+    logic valid_in,valid_out;
+    logic [WIDTH-1:0] A_in_fpu, B_in_fpu;
+    logic [WIDTH-1:0] C_fpu_temp;
+    .fma_pipeline fpu(
+        .clk(clk),
+        .rst_n(rstn),
+        .valid_in(valid_in), // 直接连接
+        .A_in(A_in_fpu),
+        .B_in(B_in_fpu),
+        .C_in(C_init),
+        .valid_out(valid_out),
+        .F_out(C_fpu_temp)
+    );
+    always_ff @(posedge clk or negedge rstn) begin
+        if(!rstn) valid_in <= 1'b0;
+        else if (C_load) 
+            valid_in <= valid_in | C_load;
+    end
     //整形运算单元
     logic signed [7:0] A_alu, B_alu;
     logic signed [15:0] C_alu;

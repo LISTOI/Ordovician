@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2.2 (64-bit)
+# SW Build 6060944 on Thu Mar 06 19:10:01 MST 2025
+# IP Build 6050500 on Thu Mar  6 23:33:39 MST 2025
+# SharedData Build 6060542 on Thu Mar 06 10:31:07 MST 2025
+# Start of session at: Mon May 12 18:54:42 2025
+# Process ID         : 15712
+# Current directory  : D:/digital design/Ordovician/Ordovician_a7/Ordovician_a7.runs/synth_1
+# Command line       : vivado.exe -log Ordovician_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Ordovician_top.tcl
+# Log file           : D:/digital design/Ordovician/Ordovician_a7/Ordovician_a7.runs/synth_1/Ordovician_top.vds
+# Journal file       : D:/digital design/Ordovician/Ordovician_a7/Ordovician_a7.runs/synth_1\vivado.jou
+# Running On         : TR-PC
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 8463 MB
+# Swap memory        : 25508 MB
+# Total Virtual      : 33971 MB
+# Available Virtual  : 13032 MB
+#-----------------------------------------------------------
+source Ordovician_top.tcl -notrace

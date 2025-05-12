@@ -1,0 +1,12 @@
+sv xpm  \
+"E:/vivado/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+sv xil_defaultlib  \
+"../../../Ordovician.srcs/sources_1/new/PE.sv" \
+"../../../Ordovician.srcs/sources_1/new/SystolicArray.sv" \
+"../../../Ordovician.srcs/sim_1/new/systolic_array_tb.sv" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
