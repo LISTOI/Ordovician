@@ -23,13 +23,8 @@ vlog -work xil_defaultlib  -incr -mfcu  \
 "../../../Ordovician_a7.gen/sources_1/ip/blk_mem_gen_0_1/sim/blk_mem_gen_0.v" \
 
 vlog -work xil_defaultlib  -incr -mfcu  -sv \
-"../../../Ordovician_a7.srcs/sources_1/new/CALC_Matrix.sv" \
-"../../../Ordovician_a7.srcs/sources_1/new/Ordovician_top.sv" \
-"../../../Ordovician_a7.srcs/sources_1/new/PE.sv" \
 "../../../Ordovician_a7.srcs/sources_1/new/READ_Matrix.sv" \
-"../../../Ordovician_a7.srcs/sources_1/new/SystolicArray.sv" \
-"../../../Ordovician_a7.srcs/sources_1/new/WRITE_Matrix.sv" \
-"../../../Ordovician_a7.srcs/sim_1/new/top_tb.sv" \
+"../../../Ordovician_a7.srcs/sim_1/new/read_tb.sv" \
 
 vlog -work xil_defaultlib \
 "glbl.v"
