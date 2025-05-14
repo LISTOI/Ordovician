@@ -215,8 +215,8 @@ module READ_Matrix (
 
     // Internal signals
     logic [7:0] config_reg;
-    shape_t shape;
-    dtype_t dtype_ab, dtype_c;
+    shape_t shape; // matrix type
+    dtype_t dtype_ab, dtype_c; // data type
     logic [31:0] ar_counter, ar_counter_next;
     logic [31:0] elem_counter;
     state_t state, next_state;
