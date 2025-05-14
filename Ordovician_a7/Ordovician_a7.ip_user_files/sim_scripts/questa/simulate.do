@@ -1,7 +1,7 @@
 onbreak {quit -f}
 onerror {quit -f}
 
-vsim  -lib xil_defaultlib top_tb_opt
+vsim  -lib xil_defaultlib read_tb_opt
 
 set NumericStdNoWarnings 1
 set StdArithNoWarnings 1
@@ -12,7 +12,7 @@ view wave
 view structure
 view signals
 
-do {top_tb.udo}
+do {read_tb.udo}
 
 run 1000ns
 

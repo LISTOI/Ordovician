@@ -8,8 +8,8 @@ module CALC_Matrix(
     input  logic [31:0] Matrix_B        [0:3][0:22][0: 7],
     input  logic [31:0] Matrix_C_input  [0:3][0: 7][0: 7],
     output logic [31:0] Matrix_C_output [0:3][0: 7][0: 7],
-    input  logic [5 :0] MUL_valid,
-    input  logic [5 :0] ADD_valid,
+    input  logic [1 :0] MUL_valid,
+    input  logic [1 :0] ADD_valid,
     input  logic [1 :0] Matrix_type //0 : m8k16n32 1：m16k16n16 2：m32k16n8
     );
     logic [31:0] Matrix_A_input[0:3][0: 7][0:22];
