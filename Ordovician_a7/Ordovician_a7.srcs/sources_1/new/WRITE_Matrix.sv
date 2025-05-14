@@ -9,7 +9,7 @@ module WRITE_Matrix (
 
     input logic [1:0] MUL_valid,
     input logic [1:0] ADD_valid,
-    input logic [1:0] Matrix_type
+    input logic [1:0] Matrix_type,
 );
 
     // AXI-Full interface signals for BRAM
@@ -39,7 +39,7 @@ module WRITE_Matrix (
     logic        s_axi_bready;
 
     // Internal signals
-    typedef enum logic [1:0] {
+    typedef enum logic [2:0] {
         IDLE,
         WRITE_ADDR,
         WRITE_DATA,
@@ -130,6 +130,7 @@ module WRITE_Matrix (
             data_buffer <= 0;
             data_ptr <= 0;
         end else begin
+            
             state <= next_state;
             
             case (state)
@@ -142,46 +143,148 @@ module WRITE_Matrix (
                 
                 WRITE_DATA: begin
                     if (s_axi_wready) begin
-                        // Pack data based on dtype
                         case (ADD_valid)
-                            2'b00: begin // INT4
+                            2'b00: begin // INT4: 每个 32bit 打包 8 个 4bit 元素
                                 for (int i=0; i<8; i++) begin
                                     if (write_counter+i < max_elem_c) begin
-                                        logic [31:0] row, col;
-                                        row = (write_counter+i) / cols_c;
-                                        col = (write_counter+i) % cols_c;
-                                        data_buffer[31-i*4 -:4] = Matrix_C[row/8][row%8][col][3:0];
+                                        int global_idx = write_counter + i;
+                                        int row_in_matrix, col_in_matrix;
+                                        int block_idx, block_row, block_col;
+
+                                        // 根据 Matrix_type 计算块索引
+                                        case (Matrix_type)
+                                            2'b00: begin // SHAPE_M8K16N32: 横向拼接
+                                                row_in_matrix = global_idx / cols_c;
+                                                col_in_matrix = global_idx % cols_c;
+                                                block_idx = col_in_matrix / 8; // 列方向分块
+                                                block_row = row_in_matrix;
+                                                block_col = col_in_matrix % 8;
+                                            end
+                                            2'b01: begin // SHAPE_M16K16N16: 行优先分块
+                                                row_in_matrix = global_idx / cols_c;
+                                                col_in_matrix = global_idx % cols_c;
+                                                block_idx = (row_in_matrix / 8) * 2 + (col_in_matrix / 8); // 2x2 分块
+                                                block_row = row_in_matrix % 8;
+                                                block_col = col_in_matrix % 8;
+                                            end
+                                            2'b10: begin // SHAPE_M32K16N8: 纵向拼接
+                                                row_in_matrix = global_idx / cols_c;
+                                                col_in_matrix = global_idx % cols_c;
+                                                block_idx = row_in_matrix / 8; // 行方向分块
+                                                block_row = row_in_matrix % 8;
+                                                block_col = col_in_matrix;
+                                            end
+                                        endcase
+
+                                        data_buffer[31-i*4 -:4] = Matrix_C[block_idx][block_row][block_col][3:0];
                                     end
                                 end
                                 write_counter <= write_counter + 8;
                             end
-                            2'b01: begin // INT8
+                            2'b01: begin // INT8: 每个 32bit 打包 4 个 8bit 元素
                                 for (int i=0; i<4; i++) begin
                                     if (write_counter+i < max_elem_c) begin
-                                        logic [31:0] row, col;
-                                        row = (write_counter+i) / cols_c;
-                                        col = (write_counter+i) % cols_c;
-                                        data_buffer[31-i*8 -:8] = Matrix_C[row/8][row%8][col][7:0];
+                                        int global_idx = write_counter + i;
+                                        int row_in_matrix, col_in_matrix;
+                                        int block_idx, block_row, block_col;
+
+                                        case (Matrix_type)
+                                            2'b00: begin // SHAPE_M8K16N32
+                                                row_in_matrix = global_idx / cols_c;
+                                                col_in_matrix = global_idx % cols_c;
+                                                block_idx = col_in_matrix / 8;
+                                                block_row = row_in_matrix;
+                                                block_col = col_in_matrix % 8;
+                                            end
+                                            2'b01: begin // SHAPE_M16K16N16
+                                                row_in_matrix = global_idx / cols_c;
+                                                col_in_matrix = global_idx % cols_c;
+                                                block_idx = (row_in_matrix / 8) * 2 + (col_in_matrix / 8);
+                                                block_row = row_in_matrix % 8;
+                                                block_col = col_in_matrix % 8;
+                                            end
+                                            2'b10: begin // SHAPE_M32K16N8
+                                                row_in_matrix = global_idx / cols_c;
+                                                col_in_matrix = global_idx % cols_c;
+                                                block_idx = row_in_matrix / 8;
+                                                block_row = row_in_matrix % 8;
+                                                block_col = col_in_matrix;
+                                            end
+                                        endcase
+
+                                        data_buffer[31-i*8 -:8] = Matrix_C[block_idx][block_row][block_col][7:0];
                                     end
                                 end
                                 write_counter <= write_counter + 4;
                             end
-                            2'b10: begin // FP16
+                            2'b10: begin // FP16: 每个 32bit 打包 2 个 16bit 元素
                                 for (int i=0; i<2; i++) begin
                                     if (write_counter+i < max_elem_c) begin
-                                        logic [31:0] row, col;
-                                        row = (write_counter+i) / cols_c;
-                                        col = (write_counter+i) % cols_c;
-                                        data_buffer[31-i*16 -:16] = Matrix_C[row/8][row%8][col][15:0];
+                                        int global_idx = write_counter + i;
+                                        int row_in_matrix, col_in_matrix;
+                                        int block_idx, block_row, block_col;
+
+                                        case (Matrix_type)
+                                            2'b00: begin // SHAPE_M8K16N32
+                                                row_in_matrix = global_idx / cols_c;
+                                                col_in_matrix = global_idx % cols_c;
+                                                block_idx = col_in_matrix / 8;
+                                                block_row = row_in_matrix;
+                                                block_col = col_in_matrix % 8;
+                                            end
+                                            2'b01: begin // SHAPE_M16K16N16
+                                                row_in_matrix = global_idx / cols_c;
+                                                col_in_matrix = global_idx % cols_c;
+                                                block_idx = (row_in_matrix / 8) * 2 + (col_in_matrix / 8);
+                                                block_row = row_in_matrix % 8;
+                                                block_col = col_in_matrix % 8;
+                                            end
+                                            2'b10: begin // SHAPE_M32K16N8
+                                                row_in_matrix = global_idx / cols_c;
+                                                col_in_matrix = global_idx % cols_c;
+                                                block_idx = row_in_matrix / 8;
+                                                block_row = row_in_matrix % 8;
+                                                block_col = col_in_matrix;
+                                            end
+                                        endcase
+
+                                        data_buffer[31-i*16 -:16] = Matrix_C[block_idx][block_row][block_col][15:0];
                                     end
                                 end
                                 write_counter <= write_counter + 2;
                             end
-                            2'b11: begin // FP32
-                                logic [31:0] row, col;
-                                row = write_counter / cols_c;
-                                col = write_counter % cols_c;
-                                data_buffer = Matrix_C[row/8][row%8][col];
+                            2'b11: begin // FP32: 每个 32bit 存储 1 个元素
+                                if (write_counter < max_elem_c) begin
+                                    int global_idx = write_counter;
+                                    int row_in_matrix, col_in_matrix;
+                                    int block_idx, block_row, block_col;
+
+                                    case (Matrix_type)
+                                        2'b00: begin // SHAPE_M8K16N32
+                                            row_in_matrix = global_idx / cols_c;
+                                            col_in_matrix = global_idx % cols_c;
+                                            block_idx = col_in_matrix / 8;
+                                            block_row = row_in_matrix;
+                                            block_col = col_in_matrix % 8;
+                                        end
+                                        2'b01: begin // SHAPE_M16K16N16
+                                            row_in_matrix = global_idx / cols_c;
+                                            col_in_matrix = global_idx % cols_c;
+                                            block_idx = (row_in_matrix / 8) * 2 + (col_in_matrix / 8);
+                                            block_row = row_in_matrix % 8;
+                                            block_col = col_in_matrix % 8;
+                                        end
+                                        2'b10: begin // SHAPE_M32K16N8
+                                            row_in_matrix = global_idx / cols_c;
+                                            col_in_matrix = global_idx % cols_c;
+                                            block_idx = row_in_matrix / 8;
+                                            block_row = row_in_matrix % 8;
+                                            block_col = col_in_matrix;
+                                        end
+                                    endcase
+
+                                    data_buffer = Matrix_C[block_idx][block_row][block_col];
+                                end
                                 write_counter <= write_counter + 1;
                             end
                         endcase
@@ -209,7 +312,7 @@ module WRITE_Matrix (
                     next_state = WRITE_DATA;
                     
             WRITE_DATA: 
-                if (write_counter >= max_elem_c && s_axi_wready) 
+                if (write_counter >= max_elem_c-1 && s_axi_wready) 
                     next_state = WAIT_RESP;
                     
             WAIT_RESP: 
