@@ -1,4 +1,24 @@
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2025/05/13 20:21:54
+// Design Name: 
+// Module Name: WRTIE_Matrix
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
 module WRITE_Matrix (
     input logic clk,
     input logic rstn,
@@ -9,7 +29,7 @@ module WRITE_Matrix (
 
     input logic [1:0] MUL_valid,
     input logic [1:0] ADD_valid,
-    input logic [1:0] Matrix_type,
+    input logic [1:0] Matrix_type
 );
 
     // AXI-Full interface signals for BRAM
@@ -213,7 +233,6 @@ module WRITE_Matrix (
                                         endcase
 
                                         data_buffer[31-i*8 -:8] = Matrix_C[block_idx][block_row][block_col][7:0];
-                                    end
                                 end
                                 write_counter <= write_counter + 4;
                             end
@@ -312,7 +331,7 @@ module WRITE_Matrix (
                     next_state = WRITE_DATA;
                     
             WRITE_DATA: 
-                if (write_counter >= max_elem_c-1 && s_axi_wready) 
+                if (write_counter >= max_elem_c && ~s_axi_wready) 
                     next_state = WAIT_RESP;
                     
             WAIT_RESP: 
