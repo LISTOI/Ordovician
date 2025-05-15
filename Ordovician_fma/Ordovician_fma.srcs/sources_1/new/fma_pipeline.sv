@@ -45,15 +45,15 @@ module fma_pipeline #(
             valid_s1 <= valid_in;
 
             signA_s1 <= signA_in;
-            expA_s1 <= expA_in;
+            expA_s1 <= (expA_in == 0) ? 1 : expA_in;
             fracA_s1 <= (expA_in == 0) ? {1'b0, fracA_in} : {1'b1, fracA_in};
 
             signB_s1 <= signB_in;
-            expB_s1 <= expB_in;
+            expB_s1 <= (expB_in == 0) ? 1 : expB_in;
             fracB_s1 <= (expB_in == 0) ? {1'b0, fracB_in} : {1'b1, fracB_in};
 
             signC_s1 <= signC_in;
-            expC_s1 <= expC_in;
+            expC_s1 <= (expC_in == 0) ? 1 : expC_in;
             fracC_s1 <= (expC_in == 0) ? {1'b0, fracC_in} : {1'b1, fracC_in};
         end
     end
@@ -87,7 +87,7 @@ module fma_pipeline #(
             signAB_s2 <= signA_s1 ^ signB_s1;
 
             // Add exponents
-            expAB_s2 <= ((&expA_s1) | (&expB_s1)) ? ({(FPexp){1'b1}}) : ({{2'b0}, expA_s1} + {{2'b0}, expB_s1}) - ((1 << (FPexp - 1)) - 1);
+            expAB_s2 <= ((&expA_s1) | (&expB_s1)) ? ({(FPexp){1'b1}}) : (({{2'b0}, expA_s1} + {{2'b0}, expB_s1}) - ((1 << (FPexp - 1)) - 1));
 
             // Multiply frac
             prodAB_s2 <= {{(FPfrac + 1){1'b0}}, fracA_s1} * {{(FPfrac + 1){1'b0}}, fracB_s1};
@@ -300,5 +300,4 @@ module fma_pipeline #(
 
     assign valid_out = valid_s5;
     assign F_out = out_s5;
-
 endmodule

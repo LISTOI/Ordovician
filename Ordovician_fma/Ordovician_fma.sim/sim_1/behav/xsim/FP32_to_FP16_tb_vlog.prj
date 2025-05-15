@@ -1,7 +1,7 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  \
-"../../../../Ordovician_fma.srcs/sources_1/new/fma_pipeline.sv" \
-"../../../../Ordovician_fma.srcs/sim_1/new/fma_pipeline_tb.sv" \
+"../../../../Ordovician_fma.srcs/sources_1/new/FP32_to_FP16.sv" \
+"../../../../Ordovician_fma.srcs/sim_1/new/FP32_to_FP16_tb.sv" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
