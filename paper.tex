@@ -1,0 +1,108 @@
+\documentclass[sigconf]{acmart}
+\settopmatter{printacmref=false}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}
+
+\title{Ordovician: Mixed-Precision Quantized Inference Accelerator for Sparse Transformers on CPU/FPGA Co-Porcessing System}
+
+\author{Lei Gong}
+\affiliation{
+	\institution{University of Science and Technology of China}
+	\city{Hefei}
+	\country{China}
+}
+
+\acmConference[ShortName]{FullName}{Date}{Location}
+\acmDOI{DOI}
+
+\begin{document}
+	
+	\begin{abstract}
+	\end{abstract}
+	
+	\keywords{Vision-Language Model, Mixed-Precision Quantization, Contextual Sparsity, Embedded Platform, CPU/FPGA Co-Processing}
+	
+	\maketitle
+	
+	\section{Introduction}
+	随着多模态人工智能的发展，视觉语言模型（Vision-Language Models, VLM）在视觉理解、视觉问答、多模态推理以及人机交互等任务中展现出强大的能力。相比仅处理文本的模型，VLM 能够综合处理视觉与文本信息，从而更好地理解复杂的真实世界环境。因此，VLM 在边缘端平台上部署的需求日益增长，尤其是在自动驾驶等资源受限的嵌入式场景中。
+
+	目前，边缘侧推理计算通常采用以下几种部署方式：一是基于云端 GPU 的集中式推理服务，通过远程调用完成推理计算；二是基于高性能 GPU 的桌面端部署，用于满足较低延时需求；三是在嵌入式设备上进行本地推理。相较于前两中部署方式，在资源受限的嵌入式环境中，特别是在存储容量和访存带宽方面的严格限制下，实现性能、功耗满足要求的 VLM 部署仍然面临重大挑战，这在很大程度上限制了 VLM 的实际落地。
+
+	桌面端和云端借助模型量化和神经元动态稀疏化提升 LLM 部署效能的方法提供了优化思路，但直接引入嵌入式端的 VLM 部署仍存在难点。模型量化通过将模型参数和激活值从浮点精度压缩为低比特表示，例如 INT8、INT4 等，可以显著减少模型存储容量并提升推理计算效率。然而，现有硬件平台通常仅支持固定精度计算，对模型的统一精度量化使得低比特量化对模型精度影响较大，无法充分利用不同层或不同模块的精度特性充分压缩数据大小。除了量化技术之外，神经元动态稀疏化通过剪枝或结构化稀疏化技术，可以减少模型中不重要的权重参数，从而降低矩阵乘法计算量并提高推理效率。然而，当前大多数通用计算平台在执行稀疏矩阵计算时难以充分利用稀疏结构，往往仍然按照密集矩阵进行计算，从而无法获得理想的性能提升。综上所述，现有嵌入式平台在执行大模型推理时，往往受到通用硬件架构限制而无法充分利用量化和稀疏性优化带来的计算量与实时性地提升。
+	
+	为了解决上述问题，本文提出了嵌入式端的 CPU-FPGA 耦合的 VLM 推理计算架构，并将其应用于 LLaVA-7B 视觉语言模型的推理部署。系统在算法层面，将混合精度量化与动态神经元稀疏进行结合，改进了传统预测方法，提出了新额推理范式；在硬件层面，为混合精度矩阵乘法和稀疏矩阵乘法计算提出了适配算法优化的专用 FPGA 硬件架构。
+	
+	\section{Background and Motivation}
+	
+	\subsection{FPGA-Based VLMs}
+	
+	核心观点：在FPGA上部署VLM可以解决VLM在嵌入式环境部署困难的问题。
+	
+	VLM在在嵌入式环境部署的最大困难来源于在低存储、低访存下实现低延迟、低耗能的部署。
+	
+	FPGA实现低延迟：人为设计简单的推理计算通路，精确控制数据访存。
+	
+	FPGA实现低能耗：
+	
+	因此，在FPGA上部署VLM能否解决VLM部署难问题
+	
+	已有大量成功案例。
+	
+	\subsection{Mixed-Precision Quantization}
+	
+	\subsection{Contextual Sparsity}
+	
+	在 LLM 的推理计算中，针对特定输入，模型只需动态激活少量的 MHA 和 MLP 参数，便可近似复现稠密模型的输出。MHA 的稀疏性主要源自 token 嵌入的相似性与聚类行为, 而 MLP 的稀疏性则来自激活函数引入的输入依赖性。
+
+	基于这一观察，我们可以通过采集模型推理过程中的激活值数据，构建稀疏性参数样本，使用简单全连接神经网络分类器和交叉熵损失函数训练得到 lookahead predictors，从而在推理过程中根据中间数据提前预测后续层的稀疏模式，从而在不损失模型性能与上下文学习能力的前提下跳过大量无用数据，实现高效推理。
+	
+	\section{Ordovician Overview}
+	
+	项目提出了一种基于 CPU–FPGA 耦合的 VLM 推理加速架构，通过在 FPGA 上设计面向量化与稀疏化模型的专用计算单元，作为高效 Transformer 算子加速引擎协助 CPU 执行推理计算，从而在资源受限环境中实现高效、低开销的 VLM 推理部署。
+
+	项目面向 KV260 平台设计并实现了专用推理加速器，并将其应用于 LLaVA 系列视觉语言模型的推理部署。在 CPU–FPGA 耦合系统中，CPU 负责读取输入图像与提示词，并将其编码为 token 向量。随后，FPGA 接收 token 向量，执行多个 Transformer Block 的推理计算：在每个 Block 中，一方面完成 QKV 矩阵计算与 Attention 层推理，另一方面并行进行 MLP 层参数稀疏性预测；进入 MLP 层后，加速器依据稀疏性预测结果，有选择地从 CPU 侧读取所需模型参数，并执行稀疏矩阵运算以生成输出 token 向量；该 token 向量将作为下一 Block 的输入持续迭代，或在完成全部 Block 后经归一化处理得到 logits 向量并返回至 CPU；最后，CPU 根据 logits 结果选取最终输出 token，从而完成完整的 VLM 推理流程。
+	
+	
+	\section{混合精度乘加树计算阵列}
+	
+	在实现上述推理架构的过程中，首先需要解决混合精度计算的支持问题。由于量化模型通常采用多种不同精度表示，因此需要设计能够支持多种精度的乘加计算逻辑。针对这一挑战，项目在 FPGA 上构建了统一的整型与浮点计算通路，设计实现了可支持 INT4、INT8 和 FP16 三种精度的乘加树计算单元。在此基础上，进一步实例化了 4 个乘加树阵列，每个阵列内部集成 64 组可流水线化、并行运行的乘加树单元，共同构成 16×16 的矩阵乘法计算阵列。这一设计使得计算模块能够在不同精度模式之间灵活切换，从而高效支持混合精度量化模型的推理计算。
+	
+	\section{面向稀疏矩阵乘法的加速架构}
+	
+	第二个挑战在于如何在推理过程中动态预测模型参数的稀疏性，从而进一步减少冗余计算。为此，项目提出了一种面向视觉语言模型中 MLP 层参数的稀疏性预测方法：针对每个 Transformer Block 的 MLP 层，以真实前向传播过程中激活值排名前 k 的参数作为“有效参数”判据进行监督训练。预测器基于当前输入的 token 向量，推断 MLP 层中哪些参数将产生较大激活值，并生成对应的 01 mask 向量，用于指示参数是否需要参与计算。同时，该预测器被硬件化部署于 FPGA 上，使得在推理阶段能够对稀疏计算路径进行高效低延迟动态调度。
+	
+	\section{量化 VLM 模型 MLP 参数稀疏性预测器}
+	
+	第三个挑战在于如何高效执行稀疏矩阵乘法计算。由于稀疏模型中大量权重为零，若仍采用密集矩阵计算方式，将无法充分利用稀疏性带来的性能优势。面对该问题，项目在 FPGA 上设计了一种专用的稀疏矩阵乘法计算单元：该单元结合稀疏性预测器生成的 mask 向量以及 token 维护信息（用于标记 token 数值是否超过预设阈值），从原始稀疏矩阵中动态提取参与计算的若干密集子矩阵，并将其重构为标准矩阵形式后输入乘加树阵列执行矩阵乘法运算，得到输出结构后对其进行解封装以生成输出 token，并同步更新 token 维护信息。该设计有效避免了无效零元素对乘加资源的占用，显著降低了乘加操作数量，从而提升了整体推理计算效率。
+	
+	\section{Implementation}
+	
+	Ordovician 系统实现分为算法层面的稀疏性预测器训练与硬件层面的 FPGA 推理计算通路设计。
+	
+	在算法层面，
+	
+	在硬件架构层面，Ordovician 基于 Vitis HLS Component 构建了完整的 Transformer Block 计算通路。Ordovician 在 VLM 的 Full Self-Attention的计算通路之上， 为MHA与MLP 模块设计了支持混合精度的矩阵乘法阵列，并针对 MLP 中的激活稀疏性构建了稀疏性预测器与稀疏矩阵乘法计算架构。除 Transformer 核心矩阵运算外，Ordovician 还针对不同精度数据在推理过程中的计算需求，分别为 LayerNorm、GELU 以及 Residual Connection设计了独立的计算通路，保证混合精度数据能够正常进入计算通路。
+	
+	此外，为实现 CPU/FPGA Co-Processing，Ordovician 基于 Vitis 的 Software Application 开发流程，采用 C++ 与 XRT 库在 CPU 侧实现了 host.cpp。host.cpp 对外负责提供 IO 接口以及模型参数地址管理；对内负责 FPGA 算子的启动控制与数据流交互。
+
+	为满足 FPGA 算子对模型参数细粒度、高带宽读取的需求，Ordovician 还额外编写了若干 Python 脚本，用于从模型权重文件中提取不同 Transformer Block 及不同 Transformer 阶段对应的参数，并将其转换为适合 FPGA 侧数据传输的 .dat 格式文件。
+
+	目前，Ordovician 已针对 LLaVA-7B 模型的 Vision Tower 部分，在 Kria KV260 Vision AI Starter Kit 平台上完成推理部署，并基于 Vitis 2025.2 完成了 C/RTL Co-Simulation 与 HLS Synthesis/Impletation 验证。
+	
+	\section{Evaluation}
+	
+	
+	
+	\section{Related Work}
+	
+	\section{Conclusion}
+	
+	\section{Acknowledgments}
+	
+\end{document}
