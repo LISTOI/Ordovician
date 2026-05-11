@@ -39,7 +39,8 @@
 	
 	为了解决上述问题，本文提出了嵌入式端的 CPU-FPGA 耦合的 VLM 推理计算架构，并将其应用于 LLaVA-7B 视觉语言模型的推理部署。系统在算法层面，将混合精度量化与动态神经元稀疏进行结合，改进了传统预测方法，提出了新额推理范式；在硬件层面，为混合精度矩阵乘法和稀疏矩阵乘法计算提出了适配算法优化的专用 FPGA 硬件架构。
 	
-	\section{Background and Motivation}
+\section{Background and Motivation}
+
 \subsection{FPGA-Based VLMs}
 
 视觉语言模型（Vision-Language Models, VLMs）在多模态任务中展现出了卓越的性能，但将其部署于资源受限的嵌入式环境中仍面临巨大挑战。这种困难主要源于 VLMs 庞大的参数规模和密集的计算需求，导致在低存储容量和低内存带宽的边缘设备上，难以实现低延迟与低能耗的推理。
@@ -50,6 +51,14 @@
 
 因此，基于 FPGA 的 VLM 部署方案能够有效应对边缘计算的严苛约束。近年来，学界与业界已有大量成功案例证实了该路径的可行性，例如基于 FPGA 的高效 Transformer 加速架构通过软硬件协同设计，在保持模型精度的同时，实现了数量级上的能效比提升（例如 FlightLLM [1] 等针对大模型底层硬件行为优化的定制框架）。
 
+% 插入图 1：FPGA vs GPU 架构对比
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{picture1.png} 
+    \caption{通用 GPU 与定制 FPGA 加速器在存储层级与执行范式上的对比。GPU 架构（右）依赖复杂的存储层级，导致较高的数据搬运和指令开销。相反，基于 FPGA 的数据流架构（左）利用分布式片上 SRAM 和定制流水线，实现了低延迟、高能效的 VLM 推理。}
+    \label{fig:fpga_gpu}
+\end{figure}
+
 \subsection{Mixed-Precision Quantization}
 
 为了进一步缓解 VLMs 推理过程中的“内存墙”与计算瓶颈，量化（Quantization）技术成为了不可或缺的手段。特别是混合精度量化（Mixed-Precision Quantization），它在提升大模型推理速度与降低能耗方面发挥了决定性作用。
@@ -58,6 +67,14 @@
 
 在近三年的研究中，混合精度与高效量化技术取得了突破性进展。业界广泛采用的 AWQ (Activation-aware Weight Quantization) [2] 通过保留极少量（约 1\%）显著权重的精度，实现了高效的 4-bit 权重推理。SmoothQuant [3] 则通过数学等价变换将激活值的量化难度转移到权重上，成功实现了无损的 W8A8（权重 8-bit，激活 8-bit）量化，极大降低了推理能耗并提升了吞吐量。此外，最新的 BitNet b1.58 [4] 探索了 1-bit（三元参数）架构，彻底去除了浮点乘法运算，这与 FPGA 极度契合，为未来极低功耗的硬件原生部署指明了方向。
 
+
+% 插入图 2：混合精度量化策略
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{picture2.png} 
+    \caption{Transformer 块中的混合精度量化策略示意图。线性层权重以 INT4 格式存储。激活值根据异常点检测进行动态分离：少数极值通道在 FP16 下计算以保持模型精度，而大部分常规通道则在 INT8 下处理，以最大化硬件执行效率。}
+    \label{fig:mixed_precision}
+\end{figure}
 
 \subsection{Contextual Sparsity}
 
